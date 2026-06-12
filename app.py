@@ -22,7 +22,7 @@ from datetime import datetime
 
 # 配置中文字体，解决 matplotlib 中文乱码问题
 plt.style.use('seaborn-v0_8-whitegrid')
-matplotlib.rcParams['font.sans-serif'] = ['Microsoft YaHei']
+matplotlib.rcParams['font.sans-serif'] = ['DejaVu Sans', 'SimHei', 'Arial Unicode MS', 'sans-serif']
 matplotlib.rcParams['axes.unicode_minus'] = False
 matplotlib.rcParams['font.size'] = 13
 matplotlib.rcParams['axes.titlesize'] = 16

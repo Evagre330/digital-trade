@@ -17,7 +17,7 @@ import seaborn as sns  # 导入seaborn库
 
 # ========== 全局样式设置 ==========
 plt.style.use('seaborn-v0_8-whitegrid')
-matplotlib.rcParams['font.sans-serif'] = ['Microsoft YaHei']
+matplotlib.rcParams['font.sans-serif'] = ['DejaVu Sans', 'SimHei', 'Arial Unicode MS', 'sans-serif']
 matplotlib.rcParams['axes.unicode_minus'] = False
 matplotlib.rcParams['font.size'] = 13
 matplotlib.rcParams['axes.titlesize'] = 16
