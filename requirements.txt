@@ -1,0 +1,10 @@
+streamlit
+pandas
+matplotlib
+seaborn
+feedparser
+beautifulsoup4
+requests
+jieba
+python-dateutil
+numpy
