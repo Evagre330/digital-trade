@@ -15,14 +15,23 @@ import streamlit as st
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 import seaborn as sns
 import json
 import feedparser
+import os
 from datetime import datetime
 
 # 配置中文字体，解决 matplotlib 中文乱码问题
 plt.style.use('seaborn-v0_8-whitegrid')
-matplotlib.rcParams['font.sans-serif'] = ['DejaVu Sans', 'SimHei', 'Arial Unicode MS', 'sans-serif']
+
+# 尝试加载项目目录下的中文字体文件
+font_path = os.path.join(os.path.dirname(__file__), 'NotoSansSC-Regular.ttf')
+if os.path.exists(font_path):
+    fm.fontManager.addfont(font_path)
+    matplotlib.rcParams['font.sans-serif'] = ['Noto Sans SC']
+else:
+    matplotlib.rcParams['font.sans-serif'] = ['DejaVu Sans']
 matplotlib.rcParams['axes.unicode_minus'] = False
 matplotlib.rcParams['font.size'] = 13
 matplotlib.rcParams['axes.titlesize'] = 16

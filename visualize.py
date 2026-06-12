@@ -12,12 +12,21 @@
 # ========== 1. 导入必要的库 ==========
 import matplotlib
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 import pandas as pd
 import seaborn as sns  # 导入seaborn库
+import os
 
 # ========== 全局样式设置 ==========
 plt.style.use('seaborn-v0_8-whitegrid')
-matplotlib.rcParams['font.sans-serif'] = ['DejaVu Sans', 'SimHei', 'Arial Unicode MS', 'sans-serif']
+
+# 尝试加载项目目录下的中文字体文件
+font_path = os.path.join(os.path.dirname(__file__), 'NotoSansSC-Regular.ttf')
+if os.path.exists(font_path):
+    fm.fontManager.addfont(font_path)
+    matplotlib.rcParams['font.sans-serif'] = ['Noto Sans SC']
+else:
+    matplotlib.rcParams['font.sans-serif'] = ['DejaVu Sans']
 matplotlib.rcParams['axes.unicode_minus'] = False
 matplotlib.rcParams['font.size'] = 13
 matplotlib.rcParams['axes.titlesize'] = 16
